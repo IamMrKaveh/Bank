@@ -1,0 +1,6 @@
+bin/
+obj/
+Structure/Encryption/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
