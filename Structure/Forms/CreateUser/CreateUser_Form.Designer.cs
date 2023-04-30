@@ -40,14 +40,18 @@ namespace Bank.Structure.Forms.CreateUser
       this.RePassword_Textbox = new System.Windows.Forms.TextBox();
       this.IsAdmin_Checkbox = new System.Windows.Forms.CheckBox();
       this.label4 = new System.Windows.Forms.Label();
-      this.AdminKey_Textbox = new System.Windows.Forms.TextBox();
+      this.KeyAdmin_Textbox = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
+      this.Username_StatusLabel = new System.Windows.Forms.Label();
+      this.KeyAdmin_StatusLabel = new System.Windows.Forms.Label();
+      this.RePassword_StatusLabel = new System.Windows.Forms.Label();
+      this.Password_StatusLabel = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
       // label2
       // 
       this.label2.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(153, 43);
+      this.label2.Location = new System.Drawing.Point(172, 43);
       this.label2.Name = "label2";
       this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
       this.label2.Size = new System.Drawing.Size(100, 28);
@@ -58,16 +62,16 @@ namespace Bank.Structure.Forms.CreateUser
       // Password_Textbox
       // 
       this.Password_Textbox.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Password_Textbox.Location = new System.Drawing.Point(31, 43);
+      this.Password_Textbox.Location = new System.Drawing.Point(50, 43);
       this.Password_Textbox.Name = "Password_Textbox";
       this.Password_Textbox.Size = new System.Drawing.Size(116, 28);
       this.Password_Textbox.TabIndex = 11;
-       this.Password_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInput_Textbox_KeyPress);
+      this.Password_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordInput_KeyPress);
       // 
       // label3
       // 
       this.label3.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label3.Location = new System.Drawing.Point(153, 9);
+      this.label3.Location = new System.Drawing.Point(172, 9);
       this.label3.Name = "label3";
       this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
       this.label3.Size = new System.Drawing.Size(100, 28);
@@ -78,7 +82,7 @@ namespace Bank.Structure.Forms.CreateUser
       // CreateUser_Button
       // 
       this.CreateUser_Button.Font = new System.Drawing.Font("Vazirmatn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.CreateUser_Button.Location = new System.Drawing.Point(31, 181);
+      this.CreateUser_Button.Location = new System.Drawing.Point(50, 181);
       this.CreateUser_Button.Name = "CreateUser_Button";
       this.CreateUser_Button.Size = new System.Drawing.Size(116, 31);
       this.CreateUser_Button.TabIndex = 9;
@@ -89,16 +93,16 @@ namespace Bank.Structure.Forms.CreateUser
       // Username_Textbox
       // 
       this.Username_Textbox.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Username_Textbox.Location = new System.Drawing.Point(31, 9);
+      this.Username_Textbox.Location = new System.Drawing.Point(50, 9);
       this.Username_Textbox.Name = "Username_Textbox";
       this.Username_Textbox.Size = new System.Drawing.Size(116, 28);
       this.Username_Textbox.TabIndex = 8;
-      this.Username_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInput_Textbox_KeyPress);
+      this.Username_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameInput_KeyPress);
       // 
       // label1
       // 
       this.label1.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(153, 77);
+      this.label1.Location = new System.Drawing.Point(172, 77);
       this.label1.Name = "label1";
       this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
       this.label1.Size = new System.Drawing.Size(100, 28);
@@ -109,17 +113,17 @@ namespace Bank.Structure.Forms.CreateUser
       // RePassword_Textbox
       // 
       this.RePassword_Textbox.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.RePassword_Textbox.Location = new System.Drawing.Point(31, 77);
+      this.RePassword_Textbox.Location = new System.Drawing.Point(50, 77);
       this.RePassword_Textbox.Name = "RePassword_Textbox";
       this.RePassword_Textbox.Size = new System.Drawing.Size(116, 28);
       this.RePassword_Textbox.TabIndex = 14;
-      this.RePassword_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInput_Textbox_KeyPress);
+      this.RePassword_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RePasswordInput_KeyPress);
       // 
       // IsAdmin_Checkbox
       // 
       this.IsAdmin_Checkbox.AutoSize = true;
       this.IsAdmin_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.IsAdmin_Checkbox.Location = new System.Drawing.Point(132, 125);
+      this.IsAdmin_Checkbox.Location = new System.Drawing.Point(151, 125);
       this.IsAdmin_Checkbox.Name = "IsAdmin_Checkbox";
       this.IsAdmin_Checkbox.Size = new System.Drawing.Size(15, 14);
       this.IsAdmin_Checkbox.TabIndex = 15;
@@ -128,7 +132,7 @@ namespace Bank.Structure.Forms.CreateUser
       // label4
       // 
       this.label4.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label4.Location = new System.Drawing.Point(153, 119);
+      this.label4.Location = new System.Drawing.Point(172, 119);
       this.label4.Name = "label4";
       this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
       this.label4.Size = new System.Drawing.Size(100, 28);
@@ -136,19 +140,19 @@ namespace Bank.Structure.Forms.CreateUser
       this.label4.Text = "آیا ادمین هستید؟";
       this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
-      // AdminKey_Textbox
+      // KeyAdmin_Textbox
       // 
-      this.AdminKey_Textbox.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.AdminKey_Textbox.Location = new System.Drawing.Point(31, 147);
-      this.AdminKey_Textbox.Name = "AdminKey_Textbox";
-      this.AdminKey_Textbox.Size = new System.Drawing.Size(116, 28);
-      this.AdminKey_Textbox.TabIndex = 18;
-      this.AdminKey_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserInput_Textbox_KeyPress);
+      this.KeyAdmin_Textbox.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.KeyAdmin_Textbox.Location = new System.Drawing.Point(50, 147);
+      this.KeyAdmin_Textbox.Name = "KeyAdmin_Textbox";
+      this.KeyAdmin_Textbox.Size = new System.Drawing.Size(116, 28);
+      this.KeyAdmin_Textbox.TabIndex = 18;
+      this.KeyAdmin_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyAdminInput_KeyPress);
       // 
       // label5
       // 
       this.label5.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label5.Location = new System.Drawing.Point(153, 147);
+      this.label5.Location = new System.Drawing.Point(172, 147);
       this.label5.Name = "label5";
       this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
       this.label5.Size = new System.Drawing.Size(100, 28);
@@ -156,12 +160,60 @@ namespace Bank.Structure.Forms.CreateUser
       this.label5.Text = "کلید ادمین :";
       this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
+      // Username_StatusLabel
+      // 
+      this.Username_StatusLabel.BackColor = System.Drawing.Color.Blue;
+      this.Username_StatusLabel.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Username_StatusLabel.Location = new System.Drawing.Point(24, 13);
+      this.Username_StatusLabel.Name = "Username_StatusLabel";
+      this.Username_StatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+      this.Username_StatusLabel.Size = new System.Drawing.Size(20, 20);
+      this.Username_StatusLabel.TabIndex = 19;
+      this.Username_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // KeyAdmin_StatusLabel
+      // 
+      this.KeyAdmin_StatusLabel.BackColor = System.Drawing.Color.Blue;
+      this.KeyAdmin_StatusLabel.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.KeyAdmin_StatusLabel.Location = new System.Drawing.Point(24, 151);
+      this.KeyAdmin_StatusLabel.Name = "KeyAdmin_StatusLabel";
+      this.KeyAdmin_StatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+      this.KeyAdmin_StatusLabel.Size = new System.Drawing.Size(20, 20);
+      this.KeyAdmin_StatusLabel.TabIndex = 20;
+      this.KeyAdmin_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // RePassword_StatusLabel
+      // 
+      this.RePassword_StatusLabel.BackColor = System.Drawing.Color.Blue;
+      this.RePassword_StatusLabel.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.RePassword_StatusLabel.Location = new System.Drawing.Point(24, 81);
+      this.RePassword_StatusLabel.Name = "RePassword_StatusLabel";
+      this.RePassword_StatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+      this.RePassword_StatusLabel.Size = new System.Drawing.Size(20, 20);
+      this.RePassword_StatusLabel.TabIndex = 21;
+      this.RePassword_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // Password_StatusLabel
+      // 
+      this.Password_StatusLabel.BackColor = System.Drawing.Color.Blue;
+      this.Password_StatusLabel.Font = new System.Drawing.Font("Vazirmatn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.Password_StatusLabel.Location = new System.Drawing.Point(24, 47);
+      this.Password_StatusLabel.Name = "Password_StatusLabel";
+      this.Password_StatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+      this.Password_StatusLabel.Size = new System.Drawing.Size(20, 20);
+      this.Password_StatusLabel.TabIndex = 22;
+      this.Password_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
       // CreateUser_Form
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(284, 261);
-      this.Controls.Add(this.AdminKey_Textbox);
+      this.Controls.Add(this.Password_StatusLabel);
+      this.Controls.Add(this.RePassword_StatusLabel);
+      this.Controls.Add(this.KeyAdmin_StatusLabel);
+      this.Controls.Add(this.Username_StatusLabel);
+      this.Controls.Add(this.KeyAdmin_Textbox);
       this.Controls.Add(this.label5);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.IsAdmin_Checkbox);
@@ -179,7 +231,13 @@ namespace Bank.Structure.Forms.CreateUser
       this.PerformLayout();
     }
 
-    private System.Windows.Forms.TextBox AdminKey_Textbox;
+    private System.Windows.Forms.Label KeyAdmin_StatusLabel;
+    private System.Windows.Forms.Label RePassword_StatusLabel;
+    private System.Windows.Forms.Label Password_StatusLabel;
+
+    private System.Windows.Forms.Label Username_StatusLabel;
+
+    private System.Windows.Forms.TextBox KeyAdmin_Textbox;
     private System.Windows.Forms.Label label5;
 
     private System.Windows.Forms.CheckBox IsAdmin_Checkbox;

@@ -28,7 +28,10 @@ namespace Bank.Structure.Models
 
     public bool IsAdmin { get; set; }
 
-    private readonly string _keyAdmin = new MyEncryptor().EncryptionMin("IamAdmin");
+    public static string _keyAdmin
+    {
+      get { return new MyEncryptor().EncryptionMin("IamAdmin"); }
+    }
 
     #endregion
   }
