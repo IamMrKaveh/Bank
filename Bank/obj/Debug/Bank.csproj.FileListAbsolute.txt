@@ -1,0 +1,13 @@
+D:\source\Projects\My Projects\Full Projects\C#\Bank\bin\Debug\Bank.exe.config
+D:\source\Projects\My Projects\Full Projects\C#\Bank\bin\Debug\Bank.exe
+D:\source\Projects\My Projects\Full Projects\C#\Bank\bin\Debug\Bank.pdb
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.csproj.AssemblyReference.cache
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.csproj.SuggestedBindingRedirects.cache
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.Properties.Resources.resources
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.exe
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.pdb
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.Structure.Forms.SelectLanguage.SelectLanguage_Form.resources
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.Authorization_Form.resources
+D:\source\Projects\My Projects\Full Projects\C#\Bank\obj\Debug\Bank.Structure.Forms.CreateUser.CreateUser_Form.resources
