@@ -7,7 +7,7 @@ namespace Bank.Structure.CheckInput
   {
     public static bool EmailCharacter_IsMatch(KeyPressEventArgs e)
     {
-      return CheckUserInput.CheckInt(e) && CheckUserInput.CheckString(e)
+      return CheckUserInput.CheckInt_Character(e) && CheckUserInput.CheckString_Character(e)
                                         && (e.KeyChar != '@')
                                         && (e.KeyChar != '.')
                                         && (e.KeyChar != '_');

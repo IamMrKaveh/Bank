@@ -66,7 +66,9 @@ namespace Bank.Structure.Forms.CreateUser
       this.Password_Textbox.Name = "Password_Textbox";
       this.Password_Textbox.Size = new System.Drawing.Size(116, 28);
       this.Password_Textbox.TabIndex = 11;
+      this.Password_Textbox.TextChanged += new System.EventHandler(this.Password_Textbox_TextChanged);
       this.Password_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordInput_KeyPress);
+      this.Password_Textbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Password_Textbox_KeyUp);
       // 
       // label3
       // 
@@ -97,7 +99,9 @@ namespace Bank.Structure.Forms.CreateUser
       this.Username_Textbox.Name = "Username_Textbox";
       this.Username_Textbox.Size = new System.Drawing.Size(116, 28);
       this.Username_Textbox.TabIndex = 8;
+      this.Username_Textbox.TextChanged += new System.EventHandler(this.Username_Textbox_TextChanged);
       this.Username_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameInput_KeyPress);
+      this.Username_Textbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Username_Textbox_KeyUp);
       // 
       // label1
       // 
@@ -117,7 +121,9 @@ namespace Bank.Structure.Forms.CreateUser
       this.RePassword_Textbox.Name = "RePassword_Textbox";
       this.RePassword_Textbox.Size = new System.Drawing.Size(116, 28);
       this.RePassword_Textbox.TabIndex = 14;
+      this.RePassword_Textbox.TextChanged += new System.EventHandler(this.RePassword_Textbox_TextChanged);
       this.RePassword_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RePasswordInput_KeyPress);
+      this.RePassword_Textbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RePassword_Textbox_KeyUp);
       // 
       // IsAdmin_Checkbox
       // 
@@ -147,7 +153,9 @@ namespace Bank.Structure.Forms.CreateUser
       this.KeyAdmin_Textbox.Name = "KeyAdmin_Textbox";
       this.KeyAdmin_Textbox.Size = new System.Drawing.Size(116, 28);
       this.KeyAdmin_Textbox.TabIndex = 18;
+      this.KeyAdmin_Textbox.TextChanged += new System.EventHandler(this.KeyAdmin_Textbox_TextChanged);
       this.KeyAdmin_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyAdminInput_KeyPress);
+      this.KeyAdmin_Textbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyAdmin_Textbox_KeyUp);
       // 
       // label5
       // 

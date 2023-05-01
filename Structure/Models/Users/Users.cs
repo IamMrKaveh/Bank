@@ -10,8 +10,14 @@ namespace Bank.Structure.Models
 
     public string EncryptedUsername
     {
-      get { return EncryptedUsername; }
-      set { EncryptedUsername = new MyEncryptor().EncryptionMin(value); }
+      get => EncryptedUsername;
+      set => EncryptedUsername = new MyEncryptor().EncryptionMin(value);
+    }
+
+    public string DecryptedUsername
+    {
+      get => DecryptedUsername;
+      set => DecryptedUsername = new MyEncryptor().DecryptionMin(value);
     }
 
     #endregion
@@ -20,18 +26,21 @@ namespace Bank.Structure.Models
 
     public string EncryptedPassword
     {
-      get { return EncryptedPassword; }
-      set { EncryptedPassword = new MyEncryptor().EncryptionMin(value); }
+      get => EncryptedPassword;
+      set => EncryptedPassword = new MyEncryptor().EncryptionMin(value);
+    }
+
+    public string DecryptedPassword
+    {
+      get => DecryptedPassword;
+      set => DecryptedPassword = new MyEncryptor().DecryptionMin(value);
     }
 
     #endregion
 
     public bool IsAdmin { get; set; }
 
-    public static string _keyAdmin
-    {
-      get { return new MyEncryptor().EncryptionMin("IamAdmin"); }
-    }
+    public static string _keyAdmin => new MyEncryptor().EncryptionMin("IamAdmin");
 
     #endregion
   }

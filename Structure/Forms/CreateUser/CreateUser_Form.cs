@@ -38,7 +38,7 @@ namespace Bank.Structure.Forms.CreateUser
       {
         Username_StatusLabel.BackColor = Color.Green;
       }
-      
+
       if (username.Length < 4)
       {
         Username_StatusLabel.BackColor = Color.Red;
@@ -48,7 +48,7 @@ namespace Bank.Structure.Forms.CreateUser
     private void PasswordInput_KeyPress(object sender, KeyPressEventArgs e)
     {
       string password = Password_Textbox.Text.Trim();
-      
+
       if (CheckPasswordInput.CheckPassword(e))
       {
         Password_StatusLabel.BackColor = Color.Red;
@@ -72,7 +72,7 @@ namespace Bank.Structure.Forms.CreateUser
     private void RePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
     {
       string rePassword = RePassword_Textbox.Text.Trim();
-      
+
       if (CheckPasswordInput.CheckPassword(e))
       {
         RePassword_StatusLabel.BackColor = Color.Red;
@@ -97,7 +97,7 @@ namespace Bank.Structure.Forms.CreateUser
     {
       string userKeyInput = KeyAdmin_Textbox.Text.Trim(), userKey = new MyEncryptor().EncryptionMin(userKeyInput);
 
-      if (!(CheckUserInput.CheckString(e) || CheckUserInput.CheckInt(e)))
+      if (CheckUserInput.CheckString_Character(e) && CheckUserInput.CheckInt_Character(e))
       {
         KeyAdmin_StatusLabel.BackColor = Color.Red;
         e.Handled = true;
@@ -117,5 +117,99 @@ namespace Bank.Structure.Forms.CreateUser
     }
 
     #endregion
+
+    #region TextChanged Event
+
+    private void Username_Textbox_TextChanged(object sender, EventArgs e)
+    {
+      string username = Username_Textbox.Text.Trim();
+
+      if (CheckUserInput.Check_If_Empty(username))
+      {
+        Username_StatusLabel.BackColor = Color.Blue;
+      }
+      else if (username.Length < 4 || CheckUserInput.CheckFull(username))
+      {
+        Username_StatusLabel.BackColor = Color.Red;
+      }
+      else
+      {
+        Username_StatusLabel.BackColor = Color.Green;
+      }
+    }
+
+    private void Password_Textbox_TextChanged(object sender, EventArgs e)
+    {
+      string password = Password_Textbox.Text.Trim();
+
+      if (CheckUserInput.Check_If_Empty(password))
+      {
+        Password_StatusLabel.BackColor = Color.Blue;
+      }
+      else if (password.Length < 4 || CheckUserInput.CheckFull(password))
+      {
+        Password_StatusLabel.BackColor = Color.Red;
+      }
+      else
+      {
+        Password_StatusLabel.BackColor = Color.Green;
+      }
+    }
+
+    private void RePassword_Textbox_TextChanged(object sender, EventArgs e)
+    {
+      string rePassword = RePassword_Textbox.Text.Trim();
+
+      if (CheckUserInput.Check_If_Empty(rePassword))
+      {
+        RePassword_StatusLabel.BackColor = Color.Blue;
+      }
+      else if (rePassword.Length < 4|| CheckUserInput.CheckFull(rePassword))
+      {
+        RePassword_StatusLabel.BackColor = Color.Red;
+      }
+      else
+      {
+        RePassword_StatusLabel.BackColor = Color.Green;
+      }
+    }
+
+    private void KeyAdmin_Textbox_TextChanged(object sender, EventArgs e)
+    {
+      string keyadmin = KeyAdmin_Textbox.Text.Trim();
+
+      if (CheckUserInput.Check_If_Empty(keyadmin))
+      {
+        KeyAdmin_Textbox.BackColor = Color.Blue;
+      }
+      else if (keyadmin.Length < 4|| CheckUserInput.CheckFull(keyadmin))
+      {
+        KeyAdmin_Textbox.BackColor = Color.Red;
+      }
+      else
+      {
+        KeyAdmin_Textbox.BackColor = Color.Green;
+      }
+    }
+
+    #endregion
+
+    #region KeyUp
+
+    private void Username_Textbox_KeyUp(object sender, KeyEventArgs e)
+      => Username_Textbox_TextChanged(null, null);
+
+    private void Password_Textbox_KeyUp(object sender, KeyEventArgs e)
+      => Password_Textbox_TextChanged(null, null);
+
+    private void RePassword_Textbox_KeyUp(object sender, KeyEventArgs e)
+      => RePassword_Textbox_TextChanged(null, null);
+
+    private void KeyAdmin_Textbox_KeyUp(object sender, KeyEventArgs e)
+      => KeyAdmin_Textbox_TextChanged(null, null);
+
+
+    #endregion
+
   }
 }
