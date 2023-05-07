@@ -134,6 +134,7 @@ namespace Bank.Structure.Forms.CreateUser
       this.IsAdmin_Checkbox.Size = new System.Drawing.Size(15, 14);
       this.IsAdmin_Checkbox.TabIndex = 15;
       this.IsAdmin_Checkbox.UseVisualStyleBackColor = true;
+      this.IsAdmin_Checkbox.CheckedChanged += new System.EventHandler(this.IsAdmin_Checkbox_CheckedChanged);
       // 
       // label4
       // 
@@ -153,6 +154,7 @@ namespace Bank.Structure.Forms.CreateUser
       this.KeyAdmin_Textbox.Name = "KeyAdmin_Textbox";
       this.KeyAdmin_Textbox.Size = new System.Drawing.Size(116, 28);
       this.KeyAdmin_Textbox.TabIndex = 18;
+      this.KeyAdmin_Textbox.Visible = false;
       this.KeyAdmin_Textbox.TextChanged += new System.EventHandler(this.KeyAdmin_Textbox_TextChanged);
       this.KeyAdmin_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyAdminInput_KeyPress);
       this.KeyAdmin_Textbox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyAdmin_Textbox_KeyUp);
@@ -167,6 +169,7 @@ namespace Bank.Structure.Forms.CreateUser
       this.label5.TabIndex = 17;
       this.label5.Text = "کلید ادمین :";
       this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.label5.Visible = false;
       // 
       // Username_StatusLabel
       // 
@@ -189,6 +192,7 @@ namespace Bank.Structure.Forms.CreateUser
       this.KeyAdmin_StatusLabel.Size = new System.Drawing.Size(20, 20);
       this.KeyAdmin_StatusLabel.TabIndex = 20;
       this.KeyAdmin_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.KeyAdmin_StatusLabel.Visible = false;
       // 
       // RePassword_StatusLabel
       // 

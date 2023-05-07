@@ -2,14 +2,25 @@
 {
   public interface IUsers
   {
-    string EncryptedUsername { get; set; }
+    bool Create();
+
+    bool Read();
+
+    bool Update();
     
+    bool Delete();
+  }
+
+  public interface IEncrypted
+  {
+    string EncryptedUsername { get; set; }
+    string EncryptedPassword { get; set; }
+  }
+
+  public interface IDecrypted
+  {
     string DecryptedUsername { get; set; }
 
-    string EncryptedPassword { get; set; }
-    
     string DecryptedPassword { get; set; }
-
-    bool IsAdmin { get; set; }
   }
 }

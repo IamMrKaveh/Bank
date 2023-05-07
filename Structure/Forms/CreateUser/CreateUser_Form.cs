@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bank.Structure.CheckInput;
-using Bank.Structure.Encryption;
+using Bank.Structure.Message;
 using Bank.Structure.Models;
 
 namespace Bank.Structure.Forms.CreateUser
@@ -14,202 +15,62 @@ namespace Bank.Structure.Forms.CreateUser
       InitializeComponent();
     }
 
-    private void CreateUser_Button_Click(object sender, EventArgs e)
+    private async void CreateUser_Button_Click(object sender, EventArgs e)
     {
-      //check if empty => check if true => add user
-    }
-
-    #region KeyPress Event
-
-    private void UsernameInput_KeyPress(object sender, KeyPressEventArgs e)
-    {
-      string username = Username_Textbox.Text.Trim();
-
-      if (CheckUsernameInput.CheckUsername(e))
+      if (ButtonsAreGreen())
       {
-        Username_StatusLabel.BackColor = Color.Red;
-        e.Handled = true;
-      }
-      else if (CheckUserInput.Check_If_Empty(username))
-      {
-        Username_StatusLabel.BackColor = Color.Blue;
+        if (UserCommit())
+        {
+          if (IsUserAdmin())
+          {
+            if (KeyAdmin_StatusLabel.BackColor == Color.Green)
+            {
+              if (true)//check if admin already exists in the database
+              {
+                AddAdmin_TO_Databse();
+              }
+              else
+              {
+                
+              }
+            }
+            else
+            {
+              new MessageClass().IncorrectInformation();
+            }
+          }
+          else
+          {
+            if (true)//check if user is already exist in database
+            {
+              AddUser_TO_Databse();
+            }
+            else
+            {
+              
+            }
+          }
+        }
+        else
+        {
+          new MessageClass().MissionStopped();
+        }
       }
       else
       {
-        Username_StatusLabel.BackColor = Color.Green;
-      }
-
-      if (username.Length < 4)
-      {
-        Username_StatusLabel.BackColor = Color.Red;
+        new MessageClass().IncorrectInformation();
       }
     }
 
-    private void PasswordInput_KeyPress(object sender, KeyPressEventArgs e)
+    private bool ButtonsAreGreen() => Username_StatusLabel.BackColor == Color.Green
+                                      && Password_StatusLabel.BackColor == Color.Green
+                                      && RePassword_StatusLabel.BackColor == Color.Green;
+
+    private void IsAdmin_Checkbox_CheckedChanged(object sender, EventArgs e)
     {
-      string password = Password_Textbox.Text.Trim();
-
-      if (CheckPasswordInput.CheckPassword(e))
-      {
-        Password_StatusLabel.BackColor = Color.Red;
-        e.Handled = true;
-      }
-      else if (CheckUserInput.Check_If_Empty(password))
-      {
-        Password_StatusLabel.BackColor = Color.Blue;
-      }
-      else
-      {
-        Password_StatusLabel.BackColor = Color.Green;
-      }
-
-      if (password.Length < 4)
-      {
-        Password_StatusLabel.BackColor = Color.Red;
-      }
+      label5.Visible =
+        KeyAdmin_Textbox.Visible =
+          KeyAdmin_StatusLabel.Visible = IsAdmin_Checkbox.Checked;
     }
-
-    private void RePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
-    {
-      string rePassword = RePassword_Textbox.Text.Trim();
-
-      if (CheckPasswordInput.CheckPassword(e))
-      {
-        RePassword_StatusLabel.BackColor = Color.Red;
-        e.Handled = true;
-      }
-      else if (CheckUserInput.Check_If_Empty(rePassword))
-      {
-        RePassword_StatusLabel.BackColor = Color.Blue;
-      }
-      else
-      {
-        RePassword_StatusLabel.BackColor = Color.Green;
-      }
-
-      if (rePassword.Length < 4)
-      {
-        RePassword_StatusLabel.BackColor = Color.Red;
-      }
-    }
-
-    private void KeyAdminInput_KeyPress(object sender, KeyPressEventArgs e)
-    {
-      string userKeyInput = KeyAdmin_Textbox.Text.Trim(), userKey = new MyEncryptor().EncryptionMin(userKeyInput);
-
-      if (CheckUserInput.CheckString_Character(e) && CheckUserInput.CheckInt_Character(e))
-      {
-        KeyAdmin_StatusLabel.BackColor = Color.Red;
-        e.Handled = true;
-      }
-      else if (CheckUserInput.Check_If_Empty(userKeyInput))
-      {
-        KeyAdmin_StatusLabel.BackColor = Color.Blue;
-      }
-      else if (userKey == Users._keyAdmin)
-      {
-        KeyAdmin_StatusLabel.BackColor = Color.Green;
-      }
-      else
-      {
-        KeyAdmin_StatusLabel.BackColor = Color.Red;
-      }
-    }
-
-    #endregion
-
-    #region TextChanged Event
-
-    private void Username_Textbox_TextChanged(object sender, EventArgs e)
-    {
-      string username = Username_Textbox.Text.Trim();
-
-      if (CheckUserInput.Check_If_Empty(username))
-      {
-        Username_StatusLabel.BackColor = Color.Blue;
-      }
-      else if (username.Length < 4 || CheckUserInput.CheckFull(username))
-      {
-        Username_StatusLabel.BackColor = Color.Red;
-      }
-      else
-      {
-        Username_StatusLabel.BackColor = Color.Green;
-      }
-    }
-
-    private void Password_Textbox_TextChanged(object sender, EventArgs e)
-    {
-      string password = Password_Textbox.Text.Trim();
-
-      if (CheckUserInput.Check_If_Empty(password))
-      {
-        Password_StatusLabel.BackColor = Color.Blue;
-      }
-      else if (password.Length < 4 || CheckUserInput.CheckFull(password))
-      {
-        Password_StatusLabel.BackColor = Color.Red;
-      }
-      else
-      {
-        Password_StatusLabel.BackColor = Color.Green;
-      }
-    }
-
-    private void RePassword_Textbox_TextChanged(object sender, EventArgs e)
-    {
-      string rePassword = RePassword_Textbox.Text.Trim();
-
-      if (CheckUserInput.Check_If_Empty(rePassword))
-      {
-        RePassword_StatusLabel.BackColor = Color.Blue;
-      }
-      else if (rePassword.Length < 4|| CheckUserInput.CheckFull(rePassword))
-      {
-        RePassword_StatusLabel.BackColor = Color.Red;
-      }
-      else
-      {
-        RePassword_StatusLabel.BackColor = Color.Green;
-      }
-    }
-
-    private void KeyAdmin_Textbox_TextChanged(object sender, EventArgs e)
-    {
-      string keyadmin = KeyAdmin_Textbox.Text.Trim();
-
-      if (CheckUserInput.Check_If_Empty(keyadmin))
-      {
-        KeyAdmin_Textbox.BackColor = Color.Blue;
-      }
-      else if (keyadmin.Length < 4|| CheckUserInput.CheckFull(keyadmin))
-      {
-        KeyAdmin_Textbox.BackColor = Color.Red;
-      }
-      else
-      {
-        KeyAdmin_Textbox.BackColor = Color.Green;
-      }
-    }
-
-    #endregion
-
-    #region KeyUp
-
-    private void Username_Textbox_KeyUp(object sender, KeyEventArgs e)
-      => Username_Textbox_TextChanged(null, null);
-
-    private void Password_Textbox_KeyUp(object sender, KeyEventArgs e)
-      => Password_Textbox_TextChanged(null, null);
-
-    private void RePassword_Textbox_KeyUp(object sender, KeyEventArgs e)
-      => RePassword_Textbox_TextChanged(null, null);
-
-    private void KeyAdmin_Textbox_KeyUp(object sender, KeyEventArgs e)
-      => KeyAdmin_Textbox_TextChanged(null, null);
-
-
-    #endregion
-
   }
 }

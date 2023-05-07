@@ -52,6 +52,8 @@
     <Compile Include="Structure\CheckInput\CheckPassword_Input.cs" />
     <Compile Include="Structure\CheckInput\CheckUsername_Input.cs" />
     <Compile Include="Structure\CheckInput\Check_User_Inputs.cs" />
+    <Compile Include="Structure\Database\BankDatabase.cs" />
+    <Compile Include="Structure\Database\Users\UserTable.cs" />
     <Compile Include="Structure\Date\Miladi_TO_Shamsi.cs" />
     <Compile Include="Structure\Date\Shamsi_TO_Miladi.cs" />
     <Compile Include="Structure\Encryption\EncryptDecrypt.cs" />
@@ -62,6 +64,9 @@
     <Compile Include="Structure\Forms\Authorization\Authorization_Form.Designer.cs">
       <DependentUpon>Authorization_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Structure\Forms\CreateUser\Controls.cs" />
+    <Compile Include="Structure\Forms\CreateUser\CreateUser_Class.cs" />
+    <Compile Include="Structure\Forms\CreateUser\KeyEvent_Class.cs" />
     <Compile Include="Structure\Forms\CreateUser\CreateUser_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +80,16 @@
     <Compile Include="Structure\Forms\SelectLanguage\SelectLanguage_Form.Designer.cs">
       <DependentUpon>SelectLanguage_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Structure\Message\Error\ErrorMessage.cs" />
+    <Compile Include="Structure\Message\Failed\FailedMessage.cs" />
+    <Compile Include="Structure\Message\IMessage.cs" />
+    <Compile Include="Structure\Message\Incorrect\Incorect_Information_Message.cs" />
+    <Compile Include="Structure\Message\Information\InformationMessage.cs" />
+    <Compile Include="Structure\Message\Message.cs" />
+    <Compile Include="Structure\Message\Question\QuestionMessage.cs" />
+    <Compile Include="Structure\Message\Stop\MissionStoppedMessage.cs" />
+    <Compile Include="Structure\Message\Success\SuccessMessage.cs" />
+    <Compile Include="Structure\Message\Warning\WarningMessage.cs" />
     <Compile Include="Structure\Models\Users\IUsers.cs" />
     <Compile Include="Structure\Models\Users\Users.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -109,7 +124,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Structure\Database\Users\" />
     <Folder Include="Structure\Database\Cards\" />
     <Folder Include="Structure\Database\Money\" />
     <Folder Include="Structure\Forms\CreateBankAccount\" />

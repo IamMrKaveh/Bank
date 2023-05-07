@@ -17,8 +17,6 @@ n
 >Structure/Forms/SelectLanguage/SelectLanguage_Form.Designer.cs,a\4\a489f7f408c26f7a56c3f30f5f1b72ea994ec329
 e
 5Structure/Forms/SelectLanguage/SelectLanguage_Form.cs,2\5\252f10118627ae9b2a79cf3ebc1939bf26925c54
-;
-Bank.csproj,0\2\020d627cd4ef259c1d21400b3bee661e342d6888
 8
 Bank.sln,7\4\746c07b93bdfe7925d6f6024c68be06c8520d94a
 P
@@ -38,3 +36,12 @@ I
 App.config,8\d\8d37cd670eea24f5d0a9730f04cd23f10891c90a
 e
 5Structure/Forms/Authorization/Authorization_Form.resx,b\b\bb761c4c925282d6cd80efc0dd86f8c6daf9f552
+[
++Structure/CheckInput/CheckPassword_Input.cs,7\0\7041ded289798aa93541d2249a0bdec2abc0f50f
+X
+(Structure/CheckInput/CheckEmail_Input.cs,8\0\800c1dd573be05e6e8c645a2f813bbc3fd01b116
+:
+
+Program.cs,1\5\1595e9a250ff95aa8621fbd0083b2a19287dac41
+c
+3Structure/Forms/Authorization/Authorization_Form.cs,1\7\1764da0cb6880834852b4b059266b09b82b44eb7
